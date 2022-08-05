@@ -55,7 +55,7 @@ processing_function = function(tissue_chrfiles,
     
     # Write results in the QC path
     fwrite(tissuechr_chunk_proc, 
-           paste(qc_path, tissue_name., tissuechr_name, "QCed", sep = "/" ),
+           paste(qc_path, tissue_name., paste0("QCed_",tissuechr_name), sep = "/" ),
            quote = F, sep = "\t", row.names=F, col.names=T)
   }
     )
