@@ -50,7 +50,7 @@ processing_function = function(tissue_chrfiles,
     tissuechr_chunk_proc = cbind(tissuechr_chunk_proc, NrSamples)
     
     # Add column stating eQTL
-    tissuechr_chunk$eQTL = paste0("eQTL_", tissue_name.)
+    tissuechr_chunk_proc$eQTL = paste0("eQTL_", tissue_name.)
     cat("Dims after QC was applied", dim(tissuechr_chunk_proc), "\n")
     
     # Write results in the QC path
