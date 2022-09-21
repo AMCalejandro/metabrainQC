@@ -36,7 +36,8 @@ processing_function = function(tissue_chrfiles,
   
     # Inner joining the maf file to the tissuechr_chunk
     tissuechr_chunk_proc = tissuechr_chunk %>%
-      inner_join(maf. %>% dplyr::select(SNP, MAF), by = c("SNPName" = "SNP" ) )
+      inner_join(maf. %>% dplyr::select(SNP, MAF), by = c("SNPName" = "SNP" ) ) %>%
+      mutate(ProbeName = gsub("\\..*", "", ProbeName))
     
     
     # Another keyQC is to get the number of samples per SNP
