@@ -48,7 +48,7 @@ processing_function = function(tissue_chrfiles,
     # Get rsID on a column and CHR:BP on another column
     snpname = as.data.frame(
       stringr::str_split_fixed(
-        metabrain$SNPName, n = 4, pattern = ":"
+        tissuechr_chunk_proc$SNPName, n = 4, pattern = ":"
       ))
     tissuechr_chunk_proc$SNP = snpname$V3
     tissuechr_chunk_proc$CHRPOS = paste(snpname$V1, snpname$V2, sep = ":")
