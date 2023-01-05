@@ -50,8 +50,8 @@ processing_function = function(tissue_chrfiles,
       stringr::str_split_fixed(
         metabrain$SNPName, n = 4, pattern = ":"
       ))
-    metabrain$SNP = snpname$V3
-    metabrain$CHRPOS = paste(snpname$V1, snpname$V2, sep = ":")
+    tissuechr_chunk_proc$SNP = snpname$V3
+    tissuechr_chunk_proc$CHRPOS = paste(snpname$V1, snpname$V2, sep = ":")
     
     # Find the column number with the sample size and process it
     sampleSize_index = grep("DatasetsNrSamples", colnames(tissuechr_chunk_proc))
@@ -85,4 +85,3 @@ tissues_chromosomes =  map(tissues, function(tissue) {
   setNames(tissues)
 
 map2(tissues_chromosomes, names(tissues_chromosomes), processing_function)
-
